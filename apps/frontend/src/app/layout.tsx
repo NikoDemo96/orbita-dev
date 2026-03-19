@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
+import { Lexend, MuseoModerno } from "next/font/google";
 import "./globals.css";
+
+const lexend = Lexend({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const museoModerno = MuseoModerno({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className={`${lexend.variable} ${museoModerno.variable} min-h-full flex flex-col font-sans`}>
+        {children}
+      </body>
     </html>
   );
 }
