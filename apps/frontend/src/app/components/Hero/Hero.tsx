@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Header from "../Header/Header";
 
 const Hero = () => {
@@ -7,8 +10,8 @@ const Hero = () => {
         <section className="relative isolate overflow-hidden bg-[#282828] text-[#f0f0ec] min-h-screen">
             <div className="pointer-events-none absolute inset-0 -z-10">
                 <div className="absolute left-[-12rem] top-[-16rem] h-[28rem] w-[28rem] rounded-full bg-lime-400/10 blur-3xl" />
-                <div className="absolute right-[-10rem] bottom-[-14rem] h-[24rem] w-[24rem] rounded-full bg-neutral-100/10 blur-3xl" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_10%,rgba(157,247,77,0.1),transparent_40%),radial-gradient(circle_at_80%_90%,rgba(255,255,255,0.06),transparent_35%)]" />
+                {/* <div className="absolute right-[-10rem] bottom-[-14rem] h-[24rem] w-[24rem] rounded-full bg-neutral-100/10 blur-3xl" /> */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_10%,rgba(157,247,77,0.1),transparent_40%))]" />
             </div>
 
             <div className="mx-auto flex min-h-screen w-full max-w-[1180px] flex-col px-6 pb-12 pt-7 md:px-10 lg:px-16 lg:pt-10">
@@ -90,18 +93,52 @@ const Hero = () => {
 
                     {/* Right side visualization with concentric circles */}
                     <div className="flex items-center justify-center">
-                        <svg
+                        <motion.svg
                             viewBox="0 0 400 400"
                             className="h-[300px] w-[300px] md:h-[400px] md:w-[400px]"
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                         >
-                            <circle cx="200" cy="200" r="180" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
-                            <circle cx="200" cy="200" r="130" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
-                            <circle cx="200" cy="200" r="80" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
-                            <circle cx="200" cy="200" r="50" fill="#fffef9" />
-                            <circle cx="280" cy="100" r="28" fill="#ff6b6b" />
-                            <circle cx="310" cy="200" r="20" fill="#6b7dff" />
-                            <circle cx="280" cy="290" r="24" fill="#ffed5c" />
-                        </svg>
+                            <motion.circle cx="200" cy="200" r="180" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
+                            <motion.circle
+                                cx="200"
+                                cy="200"
+                                r="130"
+                                fill="none"
+                                stroke="#ffffff"
+                                strokeWidth="1"
+                                opacity="0.3"
+                                animate={{ rotate: -360 }}
+                                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                                style={{ transformOrigin: "200px 200px" }}
+                            />
+                            <motion.circle cx="200" cy="200" r="80" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
+                            <motion.circle cx="200" cy="200" r="50" fill="#fffef9" />
+                            <motion.circle
+                                cx="150"
+                                cy="35"
+                                r="28"
+                                fill="#ff6b6b"
+                                animate={{ scale: [1, 1.2, 1] }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                            />
+                            <motion.circle
+                                cx="280"
+                                cy="200"
+                                r="20"
+                                fill="#6b7dff"
+                                animate={{ scale: [1, 1.2, 1] }}
+                                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+                            />
+                            <motion.circle
+                                cx="120"
+                                cy="300"
+                                r="24"
+                                fill="#ffed5c"
+                                animate={{ scale: [1, 1.2, 1] }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+                            />
+                        </motion.svg>
                     </div>
                 </div>
             </div>
