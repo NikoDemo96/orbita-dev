@@ -1,14 +1,9 @@
-const navItems = [
-    "Sobre Nosotros",
-    "Servicios",
-    "Testimonios",
-    "Porfolio",
-    "Q&A",
-    "Contacto",
-];
+import Image from "next/image";
+import Header from "../Header/Header";
 
 const Hero = () => {
     return (
+        <>
         <section className="relative isolate overflow-hidden bg-[#282828] text-[#f0f0ec] min-h-screen">
             <div className="pointer-events-none absolute inset-0 -z-10">
                 <div className="absolute left-[-12rem] top-[-16rem] h-[28rem] w-[28rem] rounded-full bg-lime-400/10 blur-3xl" />
@@ -17,27 +12,7 @@ const Hero = () => {
             </div>
 
             <div className="mx-auto flex min-h-screen w-full max-w-[1180px] flex-col px-6 pb-12 pt-7 md:px-10 lg:px-16 lg:pt-10">
-                <header className="flex items-center justify-between gap-10">
-                    <a href="#" className="text-xl font-semibold tracking-tight text-[#f5f5ef]">
-                        orbitadev
-                        <sup className="ml-0.5 align-super text-[10px]">R</sup>
-                    </a>
-
-                    <nav className="hidden md:block">
-                        <ul className="flex items-center gap-10 text-sm font-medium text-[#f2f2ee]">
-                            {navItems.map((item) => (
-                                <li key={item}>
-                                    <a
-                                        href="#"
-                                        className="transition-colors duration-200 hover:text-lime-300"
-                                    >
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                </header>
+                <Header />
 
                 <div className="mx-auto flex w-full max-w-[900px] grow flex-col items-center justify-center pt-16 text-center md:pt-20">
                     <h1 className="max-w-[13ch] text-balance text-4xl font-semibold leading-[1.25] text-[#9df74d] [font-family:var(--font-heading)] sm:text-5xl lg:text-[68px] lg:leading-[1.16]">
@@ -53,7 +28,7 @@ const Hero = () => {
 
                     <div className="mt-12 flex w-full max-w-[560px] flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
                         <a
-                            href="#"
+                            href="#contacto-formulario"
                             className="inline-flex min-h-[64px] w-full items-center justify-center rounded-2xl bg-[#efefe8] px-8 text-lg font-semibold text-[#2b2b2a] transition-transform duration-200 hover:-translate-y-0.5 sm:w-[260px]"
                         >
                             Sigamos en contacto
@@ -68,15 +43,632 @@ const Hero = () => {
 
                     <div className="mt-24 grid w-full max-w-[760px] grid-cols-1 items-center gap-8 opacity-60 sm:grid-cols-2 sm:gap-14">
                         <div className="flex items-center justify-center">
-                            <p className="text-[52px] font-serif tracking-wide text-[#c7c7c1]">Vivaldi</p>
+                            <Image
+                                src="/vivaldi-logo1.svg"
+                                alt="Vivaldi"
+                                width={200}
+                                height={60}
+                                className="h-[60px] w-auto"
+                            />
                         </div>
                         <div className="flex items-center justify-center">
-                            <p className="text-[52px] font-semibold tracking-tight text-[#c7c7c1]">Dictum</p>
+                            <Image
+                                src="/dictum-logo1.svg"
+                                alt="Dictum"
+                                width={200}
+                                height={60}
+                                className="h-[60px] w-auto"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        {/* About Us Section */}
+        <section className="relative isolate overflow-hidden bg-[#282828] text-[#f0f0ec] py-20 md:py-32">
+            <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-16 px-6 md:px-10 lg:px-16">
+                <h2 className="text-4xl font-bold leading-tight text-[#9df74d] [font-family:var(--font-heading)] lg:text-5xl">
+                    ¿Quiénes somos?
+                </h2>
+
+                <div className="grid w-full grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+                    {/* Left side text content */}
+                    <div className="flex flex-col gap-8">
+                        <p className="text-lg leading-relaxed text-[#deded7]">
+                            Somos Orbitadev, una agencia de diseño web y desarrollo web enfocada en crear experiencias digitales funcionales, atractivas y pensadas para crecer junto a cada proyecto.
+                        </p>
+
+                        <p className="text-lg leading-relaxed text-[#deded7]">
+                            Trabajamos de forma cercana y colaborativa, involucrándosnos en cada etapa del proceso desde la definición de la idea, el diseño de la experiencia de usuario y la interfaz, hasta el desarrollo técnico y el mantenimiento del producto.
+                        </p>
+
+                        <p className="text-lg leading-relaxed text-[#deded7]">
+                            Nuestro enfoque combina diseño UX/UI, desarrollo front-end y desarrollo back-end, priorizando la usabilidad, el rendimiento y la escalabilidad. Creamos sitios web claros, fáciles de mantener y preparados para evolucionar en el tiempo, acompañando al crecimiento digital de cada cliente.
+                        </p>
+                    </div>
+
+                    {/* Right side visualization with concentric circles */}
+                    <div className="flex items-center justify-center">
+                        <svg
+                            viewBox="0 0 400 400"
+                            className="h-[300px] w-[300px] md:h-[400px] md:w-[400px]"
+                        >
+                            <circle cx="200" cy="200" r="180" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
+                            <circle cx="200" cy="200" r="130" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
+                            <circle cx="200" cy="200" r="80" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
+                            <circle cx="200" cy="200" r="50" fill="#fffef9" />
+                            <circle cx="280" cy="100" r="28" fill="#ff6b6b" />
+                            <circle cx="310" cy="200" r="20" fill="#6b7dff" />
+                            <circle cx="280" cy="290" r="24" fill="#ffed5c" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="relative isolate overflow-hidden bg-[#282828] text-[#f0f0ec] py-20 md:py-32">
+            <div className="mx-auto flex w-full max-w-[1180px] flex-col items-center gap-16 px-6 md:px-10 lg:px-16">
+                <div className="flex w-full flex-col items-center gap-6 text-center">
+                    <h2 className="text-4xl font-bold leading-tight text-[#9df74d] [font-family:var(--font-heading)] lg:text-5xl">
+                        ¿Quiénes forman parte de orbitadev?
+                    </h2>
+                    <p className="max-w-[700px] text-lg text-[#deded7]">
+                        Equipo especializado en UX/UI, front-end y back-end trabajando de forma colaborativa desde la etapa inicial del proyecto.
+                    </p>
+                </div>
+
+                <div className="grid w-full grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+                    {/* Team Member 1 */}
+                    <div className="flex flex-col items-center gap-6">
+                        <div className="h-[200px] w-[200px] overflow-hidden rounded-full border-2 border-[#9df74d] bg-gradient-to-br from-[#9df74d] to-[#6b9944]">
+                            <div className="h-full w-full flex items-center justify-center bg-[#3a3a3a] text-xl font-bold text-[#9df74d]">
+                                CA
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <h3 className="text-center text-2xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                                Christian Aránguiz
+                            </h3>
+                        </div>
+                        <p className="text-center text-sm leading-relaxed text-[#deded7]">
+                            Ha estudiado la carrera de Analista de Sistemas y cuenta con experiencia previa como desarrolladora, lo que le permite comprender en profundidad el nivel de diseño y tecnología. Actualmente se enfoca en el área de diseño UX/UI, en la cual se ha formado a través de distintos cursos y un Master en UX/UI en Nuclio Digital School. Diseña experiencias claras, funcionales y alineadas a los objetivos del negocio.
+                        </p>
+                    </div>
+
+                    {/* Team Member 2 */}
+                    <div className="flex flex-col items-center gap-6">
+                        <div className="h-[200px] w-[200px] overflow-hidden rounded-full border-2 border-[#9df74d] bg-gradient-to-br from-[#9df74d] to-[#6b9944]">
+                            <Image
+                                src="/foto-paloma.svg"
+                                alt="Paloma Herrera"
+                                width={200}
+                                height={200}
+                                className="h-full w-full object-cover"
+                            />
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <h3 className="text-center text-2xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                                Paloma Herrera
+                            </h3>
+                        </div>
+                        <p className="text-center text-sm leading-relaxed text-[#dedad7]">
+                            Ha estudiado la carrera de Analista de Sistemas y cuenta con experiencia previa como desarrolladora, lo que le permite comprender en profundidad el nivel de diseño y tecnología. Actualmente se enfoca en el área de diseño UX/UI, en la cual se ha formado a través de distintos cursos y un Master en UX/UI en Nuclio Digital School. Diseña experiencias claras, funcionales y alineadas a los objetivos del negocio.
+                        </p>
+                    </div>
+
+                    {/* Team Member 3 */}
+                    <div className="flex flex-col items-center gap-6">
+                        <div className="h-[200px] w-[200px] overflow-hidden rounded-full border-2 border-[#9df74d] bg-gradient-to-br from-[#9df74d] to-[#6b9944]">
+                            <div className="h-full w-full flex items-center justify-center bg-[#3a3a3a] text-xl font-bold text-[#9df74d]">
+                                MV
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <h3 className="text-center text-2xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                                Martin Valdes
+                            </h3>
+                        </div>
+                        <p className="text-center text-sm leading-relaxed text-[#deded7]">
+                            Soy desarrollador Full Stack, con especialización en Backend, enfocado en la creación de soluciones robustas, escalables y seguras. Trabajo principalmente en el desarrollo y mantenimiento de arquitecturas del lado del servidor, integrando APIs y lógica de negocio eficiente. Complemento mi perfil como desarrollador con formación en redes de datos y ciberseguridad, tanto en el ámbito defensivo como ofensivo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="relative isolate overflow-hidden bg-[#282828] text-[#f0f0ec] py-20 md:py-32">
+            <div className="mx-auto flex w-full max-w-[1180px] flex-col items-center gap-16 px-6 md:px-10 lg:px-16">
+                <h2 className="text-4xl font-bold leading-tight text-[#9df74d] text-center [font-family:var(--font-heading)] lg:text-5xl">
+                    ¿Qué servicios ofrecemos?
+                </h2>
+
+                <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {/* Service Card 1 */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-4">
+                        <h3 className="text-2xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                            Diseño UX/UI
+                        </h3>
+                        <p className="text-base leading-relaxed text-[#c7c7c1]">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor
+                        </p>
+                    </div>
+
+                    {/* Service Card 2 */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-4">
+                        <h3 className="text-2xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                            Desarrollo front-end y backend
+                        </h3>
+                        <p className="text-base leading-relaxed text-[#c7c7c1]">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor
+                        </p>
+                    </div>
+
+                    {/* Service Card 3 */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-4">
+                        <h3 className="text-2xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                            Mantenimiento del la web
+                        </h3>
+                        <p className="text-base leading-relaxed text-[#c7c7c1]">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Pricing Plans Section */}
+        <section className="relative isolate overflow-hidden bg-[#282828] text-[#f0f0ec] py-20 md:py-32">
+            <div className="mx-auto flex w-full max-w-[1180px] flex-col items-center gap-16 px-6 md:px-10 lg:px-16">
+                <h2 className="text-center text-4xl font-bold leading-tight text-[#9df74d] [font-family:var(--font-heading)] lg:text-5xl">
+                    Conocé nuestros planes y elegi el ideal para vos
+                </h2>
+
+                <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {/* Plan 1 - NOVA */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-6">
+                        <div>
+                            <p className="text-xs font-bold uppercase text-[#9df74d] tracking-widest">
+                                Estandar
+                            </p>
+                            <h3 className="mt-3 text-3xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                                Plan NOVA
+                            </h3>
+                        </div>
+
+                        <div>
+                            <p className="inline-block rounded-full border border-[#9df74d] px-4 py-1 text-xs text-[#9df74d]">
+                                Entrega Estimado: 2 a 3 Semanas
+                            </p>
+                        </div>
+
+                        <div>
+                            <p className="text-2xl font-bold text-[#c7c7c1]">
+                                Desde USD 400
+                            </p>
+                            <p className="mt-2 text-sm leading-relaxed text-[#c7c7c1]">
+                                Ideal para marcas personales, lanzamientos de empresas o emprendimientos que necesitan una presencia online rápida, moderna y efectiva.
+                            </p>
+                        </div>
+
+                        <div>
+                            <p className="text-xs font-semibold uppercase text-[#9df74d] mb-3">
+                                Incluye:
+                            </p>
+                            <ul className="space-y-2">
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Diseño UX/UI completo en FIGMA</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Implementación en Wordpress</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Sitio responsivo</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>3 revisiones</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Configuración completa de hosting, dominio y seguridad SSL</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button className="w-full rounded-lg bg-[#9df74d] py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#7fd940]">
+                            Más Info
+                        </button>
+                    </div>
+
+                    {/* Plan 2 - ONIX */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-6">
+                        <div>
+                            <p className="text-xs font-bold uppercase text-[#9df74d] tracking-widest">
+                                Premium
+                            </p>
+                            <h3 className="mt-3 text-3xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                                Plan ONIX
+                            </h3>
+                        </div>
+
+                        <div>
+                            <p className="inline-block rounded-full border border-[#9df74d] px-4 py-1 text-xs text-[#9df74d]">
+                                Entrega Estimado: 3 a 4 Semanas
+                            </p>
+                        </div>
+
+                        <div>
+                            <p className="text-2xl font-bold text-[#c7c7c1]">
+                                Desde USD 800
+                            </p>
+                            <p className="mt-2 text-sm leading-relaxed text-[#c7c7c1]">
+                                Ideal para empresas o marcas que buscan presencia online profesional y que necesitan una solución integral.
+                            </p>
+                        </div>
+
+                        <div>
+                            <p className="text-xs font-semibold uppercase text-[#9df74d] mb-3">
+                                Incluye:
+                            </p>
+                            <ul className="space-y-2">
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Diseño UX/UI completo en FIGMA</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>UI Kit y manual de diseño</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Desarrollo front-end + back-end básico</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>APIs</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Sitio responsivo</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>5 revisiones pre-lanzamiento</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Configuración completa de hosting, dominio y seguridad SSL</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Soporte post-lanzamiento</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button className="w-full rounded-lg bg-[#9df74d] py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#7fd940]">
+                            Más Info
+                        </button>
+                    </div>
+
+                    {/* Plan 3 - ÓRBITA */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-6">
+                        <div>
+                            <p className="text-xs font-bold uppercase text-[#9df74d] tracking-widest">
+                                Personalizado
+                            </p>
+                            <h3 className="mt-3 text-3xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                                Plan ÓRBITA
+                            </h3>
+                        </div>
+
+                        <div>
+                            <p className="inline-block rounded-full border border-[#9df74d] px-4 py-1 text-xs text-[#9df74d]">
+                                Entrega Estimado: A Definir
+                            </p>
+                        </div>
+
+                        <div>
+                            <p className="text-2xl font-bold text-[#c7c7c1]">
+                                Precio: a definir según requerimientos del proyecto
+                            </p>
+                            <p className="mt-2 text-sm leading-relaxed text-[#c7c7c1]">
+                                Ideal para empresas o proyectos que necesitan un sitio web 100% personalizado, con funcionalidades específicas, integraciones avanzadas o diseño a medida desde cero.
+                            </p>
+                        </div>
+
+                        <div>
+                            <p className="text-xs font-semibold uppercase text-[#9df74d] mb-3">
+                                Incluye:
+                            </p>
+                            <ul className="space-y-2">
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Incluye todo del PLAN ONIX +</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Reunión estratégica y análisis del proyecto</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Arquitectura UX/UI personalizada</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Desarrollo front-end y back-end a medida</span>
+                                </li>
+                                <li className="text-sm text-[#c7c7c1] flex gap-2">
+                                    <span className="text-[#9df74d]">•</span>
+                                    <span>Revisiones ilimitadas</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button className="w-full rounded-lg bg-[#9df74d] py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#7fd940]">
+                            Más Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="relative isolate overflow-hidden bg-[#282828] text-[#f0f0ec] py-20 md:py-32">
+            <div className="mx-auto flex w-full max-w-[1180px] flex-col items-center gap-16 px-6 md:px-10 lg:px-16">
+                <h2 className="text-center text-4xl font-bold leading-tight text-[#9df74d] [font-family:var(--font-heading)] lg:text-5xl">
+                    ¿Qué opinan nuestros clientes?
+                </h2>
+
+                <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
+                    {/* Testimonial 1 */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-6">
+                        <div className="flex items-center gap-4">
+                            <div className="h-16 w-16 overflow-hidden rounded-full border-2 border-[#9df74d] bg-gradient-to-br from-[#9df74d] to-[#6b9944]">
+                                <div className="h-full w-full flex items-center justify-center bg-[#3a3a3a] text-sm font-bold text-[#9df74d]">
+                                    NC
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-[#9df74d]">
+                                    Nombre Completo
+                                </h3>
+                                <p className="text-sm text-[#c7c7c1]">
+                                    Rol
+                                </p>
+                            </div>
+                        </div>
+
+                        <blockquote className="text-base leading-relaxed text-[#c7c7c1] italic">
+                            &quot;Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor&quot;
+                        </blockquote>
+                    </div>
+
+                    {/* Testimonial 2 */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-6">
+                        <div className="flex items-center gap-4">
+                            <div className="h-16 w-16 overflow-hidden rounded-full border-2 border-[#9df74d] bg-gradient-to-br from-[#9df74d] to-[#6b9944]">
+                                <div className="h-full w-full flex items-center justify-center bg-[#3a3a3a] text-sm font-bold text-[#9df74d]">
+                                    DPM
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-[#9df74d]">
+                                    Diana Pompa Morris
+                                </h3>
+                                <p className="text-sm text-[#c7c7c1]">
+                                    Dictum - Founder & Lead Quality Assurance
+                                </p>
+                            </div>
+                        </div>
+
+                        <blockquote className="text-base leading-relaxed text-[#c7c7c1] italic">
+                            &quot;Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor&quot;
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Portfolio Section */}
+        <section className="relative isolate overflow-hidden bg-[#282828] text-[#f0f0ec] py-20 md:py-32">
+            <div className="mx-auto flex w-full max-w-[1180px] flex-col items-center gap-16 px-6 md:px-10 lg:px-16">
+                <div className="flex w-full flex-col items-center gap-6 text-center">
+                    <h2 className="text-4xl font-bold leading-tight text-[#9df74d] [font-family:var(--font-heading)] lg:text-5xl">
+                        Portafolio
+                    </h2>
+                    <p className="max-w-[800px] text-lg text-[#c7c7c1]">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor
+                    </p>
+                </div>
+
+                <div className="flex w-full flex-col gap-6">
+                    {/* Portfolio Item 1 */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                        <div className="flex flex-col gap-4">
+                            <h3 className="text-2xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                                Vivaldi Marketing
+                            </h3>
+                            <p className="text-base leading-relaxed text-[#c7c7c1]">
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor
+                            </p>
+                        </div>
+                        <button className="w-full rounded-xl bg-[#efefe8] px-6 py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#deded7] md:w-auto md:flex-shrink-0">
+                            Ver proyecto
+                        </button>
+                    </div>
+
+                    {/* Portfolio Item 2 */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                        <div className="flex flex-col gap-4">
+                            <h3 className="text-2xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                                Dictum Translations
+                            </h3>
+                            <p className="text-base leading-relaxed text-[#c7c7c1]">
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor
+                            </p>
+                        </div>
+                        <button className="w-full rounded-xl bg-[#efefe8] px-6 py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#deded7] md:w-auto md:flex-shrink-0">
+                            Ver proyecto
+                        </button>
+                    </div>
+
+                    {/* Portfolio Item 3 */}
+                    <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                        <div className="flex flex-col gap-4">
+                            <h3 className="text-2xl font-bold text-[#9df74d] [font-family:var(--font-heading)]">
+                                easyemAll
+                            </h3>
+                            <p className="text-base leading-relaxed text-[#c7c7c1]">
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor
+                            </p>
+                        </div>
+                        <button className="w-full rounded-xl bg-[#efefe8] px-6 py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#deded7] md:w-auto md:flex-shrink-0">
+                            Ver proyecto
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="relative isolate overflow-hidden bg-[#282828] text-[#f0f0ec] py-20 md:py-32">
+            <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-16 px-6 md:px-10 lg:px-16">
+                <h2 className="text-4xl font-bold leading-tight text-[#9df74d] [font-family:var(--font-heading)] lg:text-5xl">
+                    Preguntas Frecuentes
+                </h2>
+
+                <div className="flex w-full flex-col gap-4">
+                    {/* FAQ Item 1 */}
+                    <details className="group rounded-3xl border-2 border-[#9df74d] p-6 cursor-pointer">
+                        <summary className="flex items-center justify-between text-lg font-medium text-[#c7c7c1] hover:text-[#9df74d] transition-colors duration-200">
+                            <span>Lorem ipsum dolor sit amet consectetur adipiscing elit.</span>
+                            <svg
+                                className="h-6 w-6 text-[#9df74d] transition-transform group-open:rotate-180"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </summary>
+                        <p className="mt-4 text-base leading-relaxed text-[#c7c7c1]">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.
+                        </p>
+                    </details>
+
+                    {/* FAQ Item 2 */}
+                    <details className="group rounded-3xl border-2 border-[#9df74d] p-6 cursor-pointer">
+                        <summary className="flex items-center justify-between text-lg font-medium text-[#c7c7c1] hover:text-[#9df74d] transition-colors duration-200">
+                            <span>Lorem ipsum dolor sit amet consectetur adipiscing elit.</span>
+                            <svg
+                                className="h-6 w-6 text-[#9df74d] transition-transform group-open:rotate-180"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </summary>
+                        <p className="mt-4 text-base leading-relaxed text-[#c7c7c1]">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.
+                        </p>
+                    </details>
+
+                    {/* FAQ Item 3 */}
+                    <details className="group rounded-3xl border-2 border-[#9df74d] p-6 cursor-pointer">
+                        <summary className="flex items-center justify-between text-lg font-medium text-[#c7c7c1] hover:text-[#9df74d] transition-colors duration-200">
+                            <span>Lorem ipsum dolor sit amet consectetur adipiscing elit.</span>
+                            <svg
+                                className="h-6 w-6 text-[#9df74d] transition-transform group-open:rotate-180"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </summary>
+                        <p className="mt-4 text-base leading-relaxed text-[#c7c7c1]">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.
+                        </p>
+                    </details>
+
+                    {/* FAQ Item 4 */}
+                    <details className="group rounded-3xl border-2 border-[#9df74d] p-6 cursor-pointer">
+                        <summary className="flex items-center justify-between text-lg font-medium text-[#c7c7c1] hover:text-[#9df74d] transition-colors duration-200">
+                            <span>Lorem ipsum dolor sit amet consectetur adipiscing elit.</span>
+                            <svg
+                                className="h-6 w-6 text-[#9df74d] transition-transform group-open:rotate-180"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </summary>
+                        <p className="mt-4 text-base leading-relaxed text-[#c7c7c1]">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contacto-formulario" className="relative isolate overflow-hidden bg-[#282828] text-[#f0f0ec] py-20 md:py-32">
+            <div className="mx-auto flex w-full max-w-[600px] flex-col items-center gap-12 px-6 md:px-10 lg:px-16">
+                <h2 className="text-4xl font-bold leading-tight text-[#9df74d] text-center [font-family:var(--font-heading)] lg:text-5xl">
+                    Sigamos en contacto
+                </h2>
+
+                <form className="flex w-full flex-col gap-6">
+                    {/* Name Input */}
+                    <input
+                        type="text"
+                        placeholder="Nombre y Apellido"
+                        className="w-full rounded-2xl border-2 border-[#9df74d] bg-transparent px-6 py-4 text-white placeholder-white placeholder-opacity-50 transition-colors focus:outline-none focus:ring-2 focus:ring-[#9df74d]/30"
+                    />
+
+                    {/* Email Input */}
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        className="w-full rounded-2xl border-2 border-[#9df74d] bg-transparent px-6 py-4 text-white placeholder-white placeholder-opacity-50 transition-colors focus:outline-none focus:ring-2 focus:ring-[#9df74d]/30"
+                    />
+
+                    {/* Subject Input */}
+                    <input
+                        type="text"
+                        placeholder="Asunto"
+                        className="w-full rounded-2xl border-2 border-[#9df74d] bg-transparent px-6 py-4 text-white placeholder-white placeholder-opacity-50 transition-colors focus:outline-none focus:ring-2 focus:ring-[#9df74d]/30"
+                    />
+
+                    {/* Message Textarea */}
+                    <textarea
+                        placeholder="Mensaje"
+                        rows={8}
+                        className="w-full rounded-2xl border-2 border-[#9df74d] bg-transparent px-6 py-4 text-white placeholder-white placeholder-opacity-50 transition-colors resize-none focus:outline-none focus:ring-2 focus:ring-[#9df74d]/30"
+                    />
+
+                    {/* Submit Button */}
+                    <div className="flex justify-center pt-4">
+                        <button
+                            type="submit"
+                            className="rounded-2xl bg-[#efefe8] px-12 py-4 text-lg font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#deded7]"
+                        >
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        </>
     );
 };
 
