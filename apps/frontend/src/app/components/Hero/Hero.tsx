@@ -113,7 +113,7 @@ const Hero = () => {
                                 style={{ transformOrigin: "200px 200px" }}
                             />
                             <motion.circle cx="200" cy="200" r="80" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
-                            <motion.circle cx="200" cy="200" r="50" fill="#fffef9" />
+                            <motion.circle cx="200" cy="200" r="40" fill="#fffef9" />
                             <motion.circle
                                 cx="150"
                                 cy="35"
@@ -318,7 +318,7 @@ const Hero = () => {
                             </ul>
                         </div>
 
-                        <button className="w-full rounded-lg bg-[#9df74d] py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#7fd940]">
+                        <button className="w-full rounded-lg bg-[#9df74d] py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#7fd940] mt-auto">
                             Más Info
                         </button>
                     </div>
@@ -389,7 +389,7 @@ const Hero = () => {
                             </ul>
                         </div>
 
-                        <button className="w-full rounded-lg bg-[#9df74d] py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#7fd940]">
+                        <button className="w-full rounded-lg bg-[#9df74d] py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#7fd940] mt-auto">
                             Más Info
                         </button>
                     </div>
@@ -448,7 +448,7 @@ const Hero = () => {
                             </ul>
                         </div>
 
-                        <button className="w-full rounded-lg bg-[#9df74d] py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#7fd940]">
+                        <button className="w-full rounded-lg bg-[#9df74d] py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#7fd940] mt-auto">
                             Más Info
                         </button>
                     </div>
@@ -468,16 +468,20 @@ const Hero = () => {
                     <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-6">
                         <div className="flex items-center gap-4">
                             <div className="h-16 w-16 overflow-hidden rounded-full border-2 border-[#9df74d] bg-gradient-to-br from-[#9df74d] to-[#6b9944]">
-                                <div className="h-full w-full flex items-center justify-center bg-[#3a3a3a] text-sm font-bold text-[#9df74d]">
-                                    NC
-                                </div>
+                                <Image
+                                    src="/vivi-foto.svg"
+                                    alt="Nombre Completo"
+                                    width={64}
+                                    height={64}
+                                    className="h-full w-full object-cover"
+                                />
                             </div>
                             <div>
                                 <h3 className="font-semibold text-[#9df74d]">
-                                    Nombre Completo
+                                    Viviana Urbaneja
                                 </h3>
                                 <p className="text-sm text-[#c7c7c1]">
-                                    Rol
+                                    Vivaldi Marketing - Co-Founder
                                 </p>
                             </div>
                         </div>
@@ -491,9 +495,13 @@ const Hero = () => {
                     <div className="rounded-3xl border-2 border-[#9df74d] bg-transparent p-8 flex flex-col gap-6">
                         <div className="flex items-center gap-4">
                             <div className="h-16 w-16 overflow-hidden rounded-full border-2 border-[#9df74d] bg-gradient-to-br from-[#9df74d] to-[#6b9944]">
-                                <div className="h-full w-full flex items-center justify-center bg-[#3a3a3a] text-sm font-bold text-[#9df74d]">
-                                    DPM
-                                </div>
+                                <Image
+                                    src="/diana-foto.svg"
+                                    alt="Diana Pompa Morris"
+                                    width={64}
+                                    height={64}
+                                    className="h-full w-full object-cover"
+                                />
                             </div>
                             <div>
                                 <h3 className="font-semibold text-[#9df74d]">
@@ -536,9 +544,14 @@ const Hero = () => {
                                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor
                             </p>
                         </div>
-                        <button className="w-full rounded-xl bg-[#efefe8] px-6 py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#deded7] md:w-auto md:flex-shrink-0">
+                        <a
+                            href="https://www.vivaldimkt.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full rounded-xl bg-[#efefe8] px-6 py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#deded7] md:w-auto md:flex-shrink-0 inline-flex items-center justify-center"
+                        >
                             Ver proyecto
-                        </button>
+                        </a>
                     </div>
 
                     {/* Portfolio Item 2 */}
@@ -551,9 +564,14 @@ const Hero = () => {
                                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor
                             </p>
                         </div>
-                        <button className="w-full rounded-xl bg-[#efefe8] px-6 py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#deded7] md:w-auto md:flex-shrink-0">
+                        <a
+                            href="https://www.dictumtranslationsolutions.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full rounded-xl bg-[#efefe8] px-6 py-3 font-semibold text-[#2b2b2a] transition-colors duration-200 hover:bg-[#deded7] md:w-auto md:flex-shrink-0 inline-flex items-center justify-center"
+                        >
                             Ver proyecto
-                        </button>
+                        </a>
                     </div>
 
                     {/* Portfolio Item 3 */}
